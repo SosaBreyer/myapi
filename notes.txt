@@ -1,0 +1,8 @@
+composer require annotations
+composer require symfony/orm-pack
+composer require --dev symfony/maker-bundle
+
+bin/console make:entity
+
+bin/console make:migration
+bin/console doctrine:migrations:migrate
