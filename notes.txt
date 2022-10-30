@@ -6,3 +6,14 @@ bin/console make:entity
 
 bin/console make:migration
 bin/console doctrine:migrations:migrate
+
+composer require symfony/security-bundle
+
+bin/console make:user
+
+bin/console make:migration
+bin/console doctrine:migrations:migrate
+
+bin/console make:controller --no-template ApiLogin
+
+composer require --dev orm-fixtures
