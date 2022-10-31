@@ -6,6 +6,7 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -20,6 +21,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255, unique=true)
      */
     private $username;
@@ -35,12 +37,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $roles = [];
 
     /**
+     * @Assert\NotBlank
      * @var string The hashed password
      * @ORM\Column(type="string")
      */
     private $password;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $apitoken;

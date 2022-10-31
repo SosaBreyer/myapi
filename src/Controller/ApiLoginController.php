@@ -18,6 +18,7 @@ class ApiLoginController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
 
         $user = $this->getUser();
+
         if (null === $user) {
             return $this->json([
                 'message' => 'missing credentials',

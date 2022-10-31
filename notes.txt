@@ -17,3 +17,10 @@ bin/console doctrine:migrations:migrate
 bin/console make:controller --no-template ApiLogin
 
 composer require --dev orm-fixtures
+
+bin/console doctrine:fixtures:load
+
+composer require symfony/validator
+
+bin/console dbal:run-sql 'SELECT * FROM user'
+bin/console dbal:run-sql 'SELECT * FROM ticket'
